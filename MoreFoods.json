@@ -1,0 +1,44 @@
+{
+  "morFoods": [
+    {
+      "id": 1,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/bread2.png",
+      "Name": "نان تازه"
+    },
+    {
+      "id": 2,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/confec2.png",
+      "Name": "شیرینی"
+    },
+    {
+      "id": 3,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/icecream2.png",
+      "Name": "آبمیوه بستنی"
+    },
+    {
+      "id": 4,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/protein2.png",
+      "Name": "پروتئین"
+    },
+    {
+      "id": 5,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/super2.png",
+      "Name": "سوپرمارکت"
+    },
+    {
+      "id": 6,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/fruit2.png",
+      "Name": "میوه"
+    },
+    {
+      "id": 7,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/nuts2.png",
+      "Name": "آجیل"
+    },
+    {
+      "id": 8,
+      "Image": "https://web-cdn.snapp.ir/snappir-marketing/images/food/cafe2.png",
+      "Name": "کافه"
+    }
+  ]
+}

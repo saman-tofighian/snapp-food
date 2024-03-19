@@ -1,9 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: iranSans;
+  src: url(.//assets/fonts/Iranian\ Sans.ttf);
+}
+* {
+  font-family:
+    iranSans,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
 body {
   width: 100%;
   font-size: 100%;
   overflow-x: hidden;
   direction: rtl;
+}
+.parent-grid {
+  display: grid;
+  grid-template-rows: auto;
+  column-gap: 1%;
+}
+@media screen and (max-width: 575px) {
+  .parent-grid {
+    grid-template-columns: repeat(4, 24%) !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  .parent-grid {
+    grid-template-columns: repeat(4, 24%) !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .parent-grid {
+    grid-template-columns: repeat(8, 12%) !important;
+  }
 }
