@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SnappLogo from "./../assets/Images/snappTextLogo.svg";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { HiBars3 } from "react-icons/hi2";
 import { TiDeleteOutline } from "react-icons/ti";
 
@@ -25,24 +24,16 @@ function HeaderLogo() {
 }
 
 function HeaderLinks() {
-  // const [navLink] = useState([
-  //   { id: 1, Name: " فرصت‌های شغلی ", To: "/" },
-  //   { id: 2, Name: " بلاگ ", To: "/" },
-  //   { id: 3, Name: " باشگاه رانندگان ", To: "/" },
-  //   { id: 4, Name: " ثبت نام راننده اسنپ ", To: "/" },
-  //   { id: 5, Name: " پنل سازمانی ", To: "/" },
-  //   { id: 6, Name: " درباره ما ", To: "/" },
-  //   { id: 7, Name: " تماس با ما ", To: "/" },
-  // ]);
-  const [navLink, setNavLink] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://localhost:9000/links")
-      .then((res) => {
-        setNavLink(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const [navLink] = useState([
+    { id: 1, Name: " فرصت‌های شغلی ", To: "/" },
+    { id: 2, Name: " بلاگ ", To: "/" },
+    { id: 3, Name: " باشگاه رانندگان ", To: "/" },
+    { id: 4, Name: " ثبت نام راننده اسنپ ", To: "/" },
+    { id: 5, Name: " پنل سازمانی ", To: "/" },
+    { id: 6, Name: " درباره ما ", To: "/" },
+    { id: 7, Name: " تماس با ما ", To: "/" },
+  ]);
+
   const OpenList = () => {
     document.getElementById("overlay").classList.remove("hidden");
     document.getElementById("overlay").classList.add("block");
@@ -70,10 +61,10 @@ function HeaderLinks() {
               className="flex items-center justify-center h-full w-fit"
             >
               <Link
-                className="w-fit h-fit text-slate-700 whitespace-nowrap text-[16px] mx-4 ease-out duration-700 hover:text-[rgb(0,209,112)]"
-                to={val.to}
+                className="w-fit h-fit text-slate-700 whitespace-nowrap text-[16px] mx-4 ease-out duration-700 hover:text-[#ff00a6]"
+                to={val.To}
               >
-                {val.name}
+                {val.Name}
               </Link>
             </li>
           );
@@ -105,10 +96,10 @@ function HeaderLinks() {
                   className="flex items-center justify-center w-full"
                 >
                   <Link
-                    className="text-slate-700 w-fit h-fit duration-700 ease-out hover:text-[#21AA58]"
-                    to={val.to}
+                    className="text-slate-700 w-fit h-fit duration-700 ease-out hover:text-[#ff00a6]"
+                    to={val.To}
                   >
-                    {val.name}
+                    {val.Name}
                   </Link>
                 </li>
               );

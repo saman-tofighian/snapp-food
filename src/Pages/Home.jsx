@@ -6,6 +6,7 @@ import Advantage from "../Components/Advantage";
 import Properties from "../Components/Properties";
 import Advertisement from "../Components/Advertisement";
 import News from "../Components/News";
+import Restaurant from "../Components/Restaurant";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <Properties />
       <Advertisement />
       <News />
+      <Restaurant />
     </main>
   );
 }

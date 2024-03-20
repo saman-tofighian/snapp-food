@@ -1,16 +1,13 @@
-// import { useState } from "react";
-// import Image1 from "./../assets/Images/bread2.png";
-// import Image2 from "./../assets/Images/confec2.png";
-// import Image3 from "./../assets/Images/icecream2.png";
-// import Image4 from "./../assets/Images/protein2.png";
-// import Image5 from "./../assets/Images/super2.png";
-// import Image6 from "./../assets/Images/fruit2.png";
-// import Image7 from "./../assets/Images/nuts2.png";
-// import Image8 from "./../assets/Images/cafe2.png";
+import { useState } from "react";
+import Image1 from "./../assets/Images/bread2.png";
+import Image2 from "./../assets/Images/confec2.png";
+import Image3 from "./../assets/Images/icecream2.png";
+import Image4 from "./../assets/Images/protein2.png";
+import Image5 from "./../assets/Images/super2.png";
+import Image6 from "./../assets/Images/fruit2.png";
+import Image7 from "./../assets/Images/nuts2.png";
+import Image8 from "./../assets/Images/cafe2.png";
 import { Link } from "react-router-dom";
-
-import axios from "axios";
-import { useEffect, useState } from "react";
 
 function MoreFoods() {
   return (
@@ -23,57 +20,48 @@ function MoreFoods() {
 }
 
 function MoreFoodsItems() {
-  // const [items] = useState([
-  //   {
-  //     id: 1,
-  //     Image: Image1,
-  //     Name: "نان تازه",
-  //   },
-  //   {
-  //     id: 2,
-  //     Image: Image2,
-  //     Name: "شیرینی",
-  //   },
-  //   {
-  //     id: 3,
-  //     Image: Image3,
-  //     Name: "آبمیوه بستنی",
-  //   },
-  //   {
-  //     id: 4,
-  //     Image: Image4,
-  //     Name: "پروتئین",
-  //   },
-  //   {
-  //     id: 5,
-  //     Image: Image5,
-  //     Name: "سوپرمارکت",
-  //   },
-  //   {
-  //     id: 6,
-  //     Image: Image6,
-  //     Name: "میوه",
-  //   },
-  //   {
-  //     id: 7,
-  //     Image: Image7,
-  //     Name: "آجیل",
-  //   },
-  //   {
-  //     id: 8,
-  //     Image: Image8,
-  //     Name: "کافه",
-  //   },
-  // ]);
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://localhost:6100/morFoods")
-      .then((res) => {
-        setItems(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const [items] = useState([
+    {
+      id: 1,
+      Image: Image1,
+      Name: "نان تازه",
+    },
+    {
+      id: 2,
+      Image: Image2,
+      Name: "شیرینی",
+    },
+    {
+      id: 3,
+      Image: Image3,
+      Name: "آبمیوه بستنی",
+    },
+    {
+      id: 4,
+      Image: Image4,
+      Name: "پروتئین",
+    },
+    {
+      id: 5,
+      Image: Image5,
+      Name: "سوپرمارکت",
+    },
+    {
+      id: 6,
+      Image: Image6,
+      Name: "میوه",
+    },
+    {
+      id: 7,
+      Image: Image7,
+      Name: "آجیل",
+    },
+    {
+      id: 8,
+      Image: Image8,
+      Name: "کافه",
+    },
+  ]);
   return (
     <div className="w-full parent-grid">
       {items.map((val) => {

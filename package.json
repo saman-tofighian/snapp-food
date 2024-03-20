@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "axios": "^1.6.7",
-    "json-server": "^1.0.0-alpha.23",
     "lodash-es": "github:lodash/lodash#es",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
