@@ -7,6 +7,7 @@ import Properties from "../Components/Properties";
 import Advertisement from "../Components/Advertisement";
 import News from "../Components/News";
 import Restaurant from "../Components/Restaurant";
+import Descriptions from "../Components/Descriptions";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
       <Advertisement />
       <News />
       <Restaurant />
+      <Descriptions />
     </main>
   );
 }
