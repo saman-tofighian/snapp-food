@@ -69,8 +69,7 @@ function MoreFoodsItems() {
           <Link
             to="/"
             key={val.id}
-            title={val.Name}
-            className="bg-[#f5f5f6] flex rounded-[9px] mb-[16px] p-[16px] items-center flex-col justify-between text-[#3f3f3f]"
+            className="bg-[#f5f5f6] flex rounded-[9px] mb-[16px] p-[16px] items-center flex-col justify-between text-[#3f3f3f] duration-700 ease-linear hover:shadow-lg hover:bg-[#ff00a6] hover:text-white"
           >
             <img
               src={val.Image}

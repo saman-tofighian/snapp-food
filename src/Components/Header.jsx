@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SnappLogo from "./../assets/Images/snappTextLogo.svg";
+import SnappLogo from "./../assets/Images/snappTextLogo-svg.svg";
 import { Link } from "react-router-dom";
 import { HiBars3 } from "react-icons/hi2";
 import { TiDeleteOutline } from "react-icons/ti";

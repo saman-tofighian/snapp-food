@@ -8,6 +8,8 @@ import Advertisement from "../Components/Advertisement";
 import News from "../Components/News";
 import Restaurant from "../Components/Restaurant";
 import Descriptions from "../Components/Descriptions";
+import MoreFoods2 from "../Components/MoreFoods2";
+import Banner from "../Components/Banner";
 
 function Home() {
   return (
@@ -22,6 +24,8 @@ function Home() {
       <News />
       <Restaurant />
       <Descriptions />
+      <MoreFoods2 />
+      <Banner />
     </main>
   );
 }
