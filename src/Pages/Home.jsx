@@ -10,6 +10,8 @@ import Restaurant from "../Components/Restaurant";
 import Descriptions from "../Components/Descriptions";
 import MoreFoods2 from "../Components/MoreFoods2";
 import Banner from "../Components/Banner";
+import FQ from "../Components/Q&A";
+
 
 function Home() {
   return (
@@ -26,6 +28,7 @@ function Home() {
       <Descriptions />
       <MoreFoods2 />
       <Banner />
+      <FQ />
     </main>
   );
 }
