@@ -11,7 +11,7 @@ import Descriptions from "../Components/Descriptions";
 import MoreFoods2 from "../Components/MoreFoods2";
 import Banner from "../Components/Banner";
 import FQ from "../Components/Q&A";
-
+import Footer from "../Components/Footer";
 
 function Home() {
   return (
@@ -27,8 +27,9 @@ function Home() {
       <Restaurant />
       <Descriptions />
       <MoreFoods2 />
-      <Banner />
       <FQ />
+      <Banner />
+      <Footer />
     </main>
   );
 }
