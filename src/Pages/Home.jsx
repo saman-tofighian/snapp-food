@@ -12,6 +12,7 @@ import MoreFoods2 from "../Components/MoreFoods2";
 import Banner from "../Components/Banner";
 import FQ from "../Components/Q&A";
 import Footer from "../Components/Footer";
+import Chose from "../Components/Chose";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       <MoreFoods />
       <Advantage />
       <Properties />
+      <Chose />
       <Advertisement />
       <News />
       <Restaurant />

@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io5";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 function Footer() {
   return (
     <section className="w-full py-10">
@@ -101,6 +103,7 @@ function FooterIcons() {
     <div className="w-full flex justify-center my-4">
       {icons.map((val) => (
         <Link
+          // data-aos="fade-right"
           key={val.id}
           to={val.To}
           title={val.Title}

@@ -81,3 +81,7 @@ html::-webkit-scrollbar-thumb {
 #shadow2 {
   text-shadow: rgb(18, 18, 18) 1px 1px 5px;
 }
+.activeBtn {
+  background: #ff00a6;
+  color: #fff;
+}
