@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Chose() {
   return (
     <section className="w-full my-4">
@@ -19,20 +21,64 @@ function ChoseParent() {
 }
 
 function ChoseButtons() {
+  const [buttons, setButtons] = useState([
+    {
+      id: 1,
+      Text: "انتخاب نوع غذا",
+      BgColor: "#FF00A6", // رنگ پیش‌فرض برای دکمه اول
+      TextColor: "#fff", // رنگ متن پیش‌فرض برای دکمه اول
+    },
+    {
+      id: 2,
+      Text: "انتخاب رستوران",
+      BgColor: "#f5f5f6",
+      TextColor: "#545567",
+    },
+    {
+      id: 3,
+      Text: "انتخاب غذای دلخواه",
+      BgColor: "#f5f5f6",
+      TextColor: "#545567",
+    },
+    {
+      id: 4,
+      Text: " انتخاب روش تحویل و پرداخت",
+      BgColor: "#f5f5f6",
+      TextColor: "#545567",
+    },
+  ]);
+
+  const [selectedButton, setSelectedButton] = useState(null);
+
+  const clickBtn = (id) => {
+    setButtons((prevButtons) =>
+      prevButtons.map((button) => ({
+        ...button,
+        BgColor: button.id === id ? "#FF00A6" : "#f5f5f6",
+        TextColor: button.id === id ? "#fff" : "#545567",
+      }))
+    );
+    setSelectedButton(id);
+  };
+
   return (
     <div className="flex flex-col">
-      <button className="bg-[#f5f5f6] text-[#545567] px-8 py-3 rounded-[9px] mb-6 text-center cursor-pointer">
-        انتخاب نوع غذا
-      </button>
-      <button className="bg-[#f5f5f6] text-[#545567] px-8 py-3 rounded-[9px] mb-6 text-center cursor-pointer">
-        انتخاب رستوران
-      </button>
-      <button className="bg-[#f5f5f6] text-[#545567] px-8 py-3 rounded-[9px] mb-6 text-center cursor-pointer">
-        انتخاب غذای دلخواه
-      </button>
-      <button className="bg-[#f5f5f6] text-[#545567] px-8 py-3 rounded-[9px] mb-6 text-center cursor-pointer">
-        انتخاب روش تحویل و پرداخت
-      </button>
+      {buttons.map((button) => (
+        <button
+          key={button.id}
+          className="text-[#545567] px-8 py-3 rounded-[9px] mb-6 text-center cursor-pointer"
+          onClick={() => clickBtn(button.id)}
+          style={{
+            background: button.BgColor,
+            color:
+              selectedButton === button.id
+                ? button.TextColor
+                : button.TextColor,
+          }}
+        >
+          {button.Text}
+        </button>
+      ))}
     </div>
   );
 }
