@@ -13,10 +13,12 @@ import Banner from "../Components/Banner";
 import FQ from "../Components/Q&A";
 import Footer from "../Components/Footer";
 import Chose from "../Components/Chose";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const { i18n } = useTranslation();
   return (
-    <main className="w-full">
+    <main dir={i18n.dir()} className="w-full">
       <Header />
       <Motto />
       <Foods />

@@ -7,15 +7,25 @@ import "aos/dist/aos.css";
 AOS.init();
 function Footer() {
   return (
-    <section className="w-full py-10">
-      <div className="w-full px-[6%] flex flex-col justify-center items-center">
-        <FooterNav />
-        <FooterIcons />
-        <FooterValidation />
-        <hr className="w-full lg:w-4/5 border-[#000] mt-4 mb-3" />
-        <FooterCopyWrite />
-      </div>
-    </section>
+    <>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#f2f5f8"
+          fillOpacity="1"
+          d="M0,0L48,26.7C96,53,192,107,288,128C384,149,480,139,576,128C672,117,768,107,864,133.3C960,160,1056,224,1152,218.7C1248,213,1344,139,1392,101.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+
+      <section className="w-full py-10 bg-[#f2f5f8]">
+        <div className="w-full px-[6%] flex flex-col justify-center items-center">
+          <FooterNav />
+          <FooterIcons />
+          <FooterValidation />
+          <hr className="w-full lg:w-4/5 border-[#000] mt-4 mb-3" />
+          <FooterCopyWrite />
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -68,7 +78,7 @@ function FooterNav() {
     },
   ]);
   return (
-    <nav className="w-full pr-2 flex flex-wrap justify-center">
+    <nav className="flex flex-wrap justify-center w-full pr-2">
       {links.map((val) => {
         return (
           <Link
@@ -100,7 +110,7 @@ function FooterIcons() {
     },
   ]);
   return (
-    <div className="w-full flex justify-center my-4">
+    <div className="flex justify-center w-full my-4">
       {icons.map((val) => (
         <Link
           // data-aos="fade-right"
@@ -108,7 +118,7 @@ function FooterIcons() {
           to={val.To}
           title={val.Title}
           target="_blank"
-          className="no-underline mx-2"
+          className="mx-2 no-underline"
         >
           {val.Image}
         </Link>
@@ -130,7 +140,7 @@ function FooterValidation() {
     },
   ]);
   return (
-    <div className="w-full flex justify-center my-4">
+    <div className="flex justify-center w-full my-4">
       {logo.map((val) => (
         <img
           src={val.Logo}
@@ -145,7 +155,7 @@ function FooterValidation() {
 
 function FooterCopyWrite() {
   return (
-    <div className="w-full flex justify-center mt-4">
+    <div className="flex justify-center w-full mt-4">
       <h6>
         توسعه یافته توسط{" "}
         <strong className="text-[#ff00a6]"> سامان توفیقیان</strong> تمامی حقوق

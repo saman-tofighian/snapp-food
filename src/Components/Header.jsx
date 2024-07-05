@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SnappLogo from "./../assets/Images/snappTextLogo-svg.svg";
 import { Link } from "react-router-dom";
 import { HiBars3 } from "react-icons/hi2";
 import { TiDeleteOutline } from "react-icons/ti";
+import { useTranslation } from "react-i18next";
 
 function Header() {
   return (
@@ -10,6 +11,7 @@ function Header() {
       <nav className="w-full h-full px-[6%] flex items-center">
         <HeaderLogo />
         <HeaderLinks />
+        <Language />
       </nav>
     </header>
   );
@@ -18,21 +20,34 @@ function Header() {
 function HeaderLogo() {
   return (
     <figure className="w-1/2 xl:w-[16%] h-full flex justify-center items-center">
-      <img src={SnappLogo} alt="لوگوی اسنپ" />
+      <img src={SnappLogo} alt="Snapp Logo" />
     </figure>
   );
 }
 
 function HeaderLinks() {
-  const [navLink] = useState([
-    { id: 1, Name: " فرصت‌های شغلی ", To: "/" },
-    { id: 2, Name: " بلاگ ", To: "/" },
-    { id: 3, Name: " باشگاه رانندگان ", To: "/" },
-    { id: 4, Name: " ثبت نام راننده اسنپ ", To: "/" },
-    { id: 5, Name: " پنل سازمانی ", To: "/" },
-    { id: 6, Name: " درباره ما ", To: "/" },
-    { id: 7, Name: " تماس با ما ", To: "/" },
+  const { t, i18n } = useTranslation();
+  const [navLink, setNavLink] = useState([
+    { id: 1, Name: t("navtxt1"), To: "/" },
+    { id: 2, Name: t("navtxt2"), To: "/" },
+    { id: 3, Name: t("navtxt3"), To: "/" },
+    { id: 4, Name: t("navtxt4"), To: "/" },
+    { id: 5, Name: t("navtxt5"), To: "/" },
+    { id: 6, Name: t("navtxt6"), To: "/" },
+    { id: 7, Name: t("navtxt7"), To: "/" },
   ]);
+
+  useEffect(() => {
+    setNavLink([
+      { id: 1, Name: t("navtxt1"), To: "/" },
+      { id: 2, Name: t("navtxt2"), To: "/" },
+      { id: 3, Name: t("navtxt3"), To: "/" },
+      { id: 4, Name: t("navtxt4"), To: "/" },
+      { id: 5, Name: t("navtxt5"), To: "/" },
+      { id: 6, Name: t("navtxt6"), To: "/" },
+      { id: 7, Name: t("navtxt7"), To: "/" },
+    ]);
+  }, [i18n.language, t]);
 
   const OpenList = () => {
     document.getElementById("overlay").classList.remove("hidden");
@@ -42,6 +57,7 @@ function HeaderLinks() {
       document.getElementById("mobileList").classList.add("w-[220px]");
     }, 700);
   };
+
   const CloseList = () => {
     document.getElementById("mobileList").classList.remove("w-[220px]");
     document.getElementById("mobileList").classList.add("w-[0]");
@@ -50,25 +66,23 @@ function HeaderLinks() {
       document.getElementById("overlay").classList.add("hidden");
     }, 1000);
   };
-  // window.addEventListener('')
+
   return (
     <div className="h-full w-1/2 xl:w-[65%] flex items-center">
       <ul className="items-center justify-center hidden w-full h-full text-right xl:flex">
-        {navLink.map((val) => {
-          return (
-            <li
-              key={val.id}
-              className="flex items-center justify-center h-full w-fit"
+        {navLink.map((val) => (
+          <li
+            key={val.id}
+            className="flex items-center justify-center h-full w-fit"
+          >
+            <Link
+              className="w-fit h-fit text-slate-700 whitespace-nowrap text-[16px] mx-4 ease-out duration-700 hover:text-[#ff00a6]"
+              to={val.To}
             >
-              <Link
-                className="w-fit h-fit text-slate-700 whitespace-nowrap text-[16px] mx-4 ease-out duration-700 hover:text-[#ff00a6]"
-                to={val.To}
-              >
-                {val.Name}
-              </Link>
-            </li>
-          );
-        })}
+              {val.Name}
+            </Link>
+          </li>
+        ))}
       </ul>
       <div className="flex xl:hidden w-full items-center justify-end pl-8">
         <span className="cursor-pointer" onClick={OpenList}>
@@ -89,25 +103,45 @@ function HeaderLinks() {
             </span>
           </div>
           <ul className="w-full h-[88vh] mt-[.4rem] flex flex-wrap justify-center">
-            {navLink.map((val) => {
-              return (
-                <li
-                  key={val.id}
-                  className="flex items-center justify-center w-full"
+            {navLink.map((val) => (
+              <li
+                key={val.id}
+                className="flex items-center justify-center w-full"
+              >
+                <Link
+                  className="text-slate-700 w-fit h-fit duration-700 ease-out hover:text-[#ff00a6]"
+                  to={val.To}
                 >
-                  <Link
-                    className="text-slate-700 w-fit h-fit duration-700 ease-out hover:text-[#ff00a6]"
-                    to={val.To}
-                  >
-                    {val.Name}
-                  </Link>
-                </li>
-              );
-            })}
+                  {val.Name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
     </div>
   );
 }
+
+function Language() {
+  const { i18n } = useTranslation();
+  const [locale, setLocale] = useState("fa");
+
+  const onChangeLocale = (e) => {
+    const { value } = e.target;
+    setLocale(value);
+    i18n.changeLanguage(value.toLowerCase());
+  };
+
+  return (
+    <div className="w-1/5 h-full  flex justify-center items-center">
+      <select value={locale} onChange={onChangeLocale}>
+        <option value="fa">Persian</option>
+        <option value="en">English</option>
+        <option value="ar">Arabic</option>
+      </select>
+    </div>
+  );
+}
+
 export default Header;
