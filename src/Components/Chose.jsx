@@ -1,50 +1,55 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function Chose() {
-  const [buttons, setButtons] = useState([
-    {
-      id: 1,
-      Text: "انتخاب نوع غذا",
-      BgColor: "#FF00A6",
-      TextColor: "#fff",
-      Title: "شروع سفارش و انتخاب غذا",
-      Desc: "با کلیک بر روی دکممه بالای صفحه، به صفحه سفارش غذا هدایت می شوید و پس از مشاهده رستوران‌های اطراف، آدرس‌تان را وارد کنید. حالا غذای موردنظرتان را بالای صفحه بنویسید یا گزینه رستوران را بزنید. راه آسان‌تر این است که در بخش دسته‌بندی‌ها، نوع غذا را مشخص کنید. از فودپارتی، جایزه خرید یا از کد تخفیف اسنپ فود هم غافل نشوید. ",
-      Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-1-new.jpg",
-      Alt: "Food1",
-    },
-    {
-      id: 2,
-      Text: "انتخاب رستوران",
-      BgColor: "#f5f5f6",
-      TextColor: "#545567",
-      Title: "پیدا کردن رستوران دلخواه",
-      Desc: "با انتخاب نوع غذا یا ورود به لیست رستوران‌ها، تعداد رستوران‌های باز را می‌بینید. به‌کمک فیلترهای بالای صفحه، می‌توانید دسته‌بندی غذا را جزئی‌تر هم بکنید، مثلاً مرغ یا خورش. با انتخاب گزینه «به ترتیب»، رستوران‌ها را براساس قیمت، امتیاز کاربران، عملکرد کلی و... مرتب کنید تا بتوانید بهتر تصمیم بگیرید.",
-      Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-2-new.jpg",
-      Alt: "Food2",
-    },
-    {
-      id: 3,
-      Text: "انتخاب غذای دلخواه",
-      BgColor: "#f5f5f6",
-      TextColor: "#545567",
-      Title: "بررسی منو، انتخاب غذا و نوشتن توضیحات ",
-      Desc: "در منوی رستوران، غذا و مخلفات موردنظرتان را انتخاب کنید. با گزینه «افزودن»، تعداد سفارش و موارد دلخواه مثل پک قاشق و چنگال را مشخص کنید. با زدن گزینه «تکمیل خرید»، در صفحه جدید، توضیحات دلخواه‌تان را بنویسید، مثلاً ظرف خورش داخل برنج نباشد. سپس گزینه «ادامه» را بزنید.",
-      Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-3-new.jpg",
-      Alt: "Food3",
-    },
-    {
-      id: 4,
-      Text: " انتخاب روش تحویل و پرداخت",
-      BgColor: "#f5f5f6",
-      TextColor: "#545567",
-      Title: "پرداخت آنلاین یا اعتباری و تحویل با پیک یا حضوری",
-      Desc: "روش تحویل سفارش را مشخص کنید: درب منزل ارسال شود یا خودتان به رستوران مراجعه می‌کنید؟ حالا نوبت انتخاب روش پرداخت است: آنلاین یا اعتباری؟ اگر کد تخفیف هم دارید، وارد کنید. با پرداخت فاکتور، در صفحه جدیدی که برای شما باز می‌شود، فرایند آماده‌سازی را خواهید دید.",
-      Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-4-new.jpg",
-      Alt: "Food4",
-    },
-  ]);
-
+  const { t } = useTranslation();
+  const [buttons, setButtons] = useState([]);
   const [selectedButton, setSelectedButton] = useState(null);
+
+  useEffect(() => {
+    setButtons([
+      {
+        id: 1,
+        Text: t("ChoseBtn1"),
+        BgColor: "#FF00A6",
+        TextColor: "#fff",
+        Title: t("ChoseTitle1"),
+        Desc: t("ChoseDesc1"),
+        Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-1-new.jpg",
+        Alt: "Food1",
+      },
+      {
+        id: 2,
+        Text: t("ChoseBtn2"),
+        BgColor: "#f5f5f6",
+        TextColor: "#545567",
+        Title: t("ChoseTitle2"),
+        Desc: t("ChoseDesc2"),
+        Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-2-new.jpg",
+        Alt: "Food2",
+      },
+      {
+        id: 3,
+        Text: t("ChoseBtn3"),
+        BgColor: "#f5f5f6",
+        TextColor: "#545567",
+        Title: t("ChoseTitle3"),
+        Desc: t("ChoseDesc3"),
+        Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-3-new.jpg",
+        Alt: "Food3",
+      },
+      {
+        id: 4,
+        Text: t("ChoseBtn4"),
+        BgColor: "#f5f5f6",
+        TextColor: "#545567",
+        Title: t("ChoseTitle4"),
+        Desc: t("ChoseDesc4"),
+        Image: "https://web-cdn.snapp.ir/snapp-website/images/food/4-4-new.jpg",
+        Alt: "Food4",
+      },
+    ]);
+  }, [t]);
 
   return (
     <section className="w-full my-4">
@@ -98,7 +103,7 @@ function ChoseButtons({
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pr-8 ">
       {buttons.map((button) => (
         <button
           key={button.id}
@@ -135,14 +140,10 @@ function ChoseText({ buttons, selectedButton }) {
       {!selected && (
         <>
           <h2 className="font-bold text-[18px] xl:text-[19px] my-4">
-            شروع سفارش و انتخاب غذا
+            {buttons[0]?.Title}
           </h2>
           <p className="leading-8 text-justify text-[14px]">
-            با کلیک بر روی دکممه بالای صفحه، به صفحه سفارش غذا هدایت می شوید و
-            پس از مشاهده رستوران‌های اطراف، آدرس‌تان را وارد کنید. حالا غذای
-            موردنظرتان را بالای صفحه بنویسید یا گزینه رستوران را بزنید. راه
-            آسان‌تر این است که در بخش دسته‌بندی‌ها، نوع غذا را مشخص کنید. از
-            فودپارتی، جایزه خرید یا از کد تخفیف اسنپ فود هم غافل نشوید.
+            {buttons[0]?.Desc}
           </p>
         </>
       )}

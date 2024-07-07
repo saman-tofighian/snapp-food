@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Restaurant() {
   return (
@@ -13,11 +14,10 @@ function Restaurant() {
 }
 
 function RestaurantTitle() {
+  const { t } = useTranslation();
   return (
     <div className="w-full text-center mt-[8px] mb-[16px]">
-      <h2 className="text-[22px] font-semibold">
-        پرطرفدارترین رستوران‌ها در اسنپ
-      </h2>
+      <h2 className="text-[22px] font-semibold">{t("RestaurantTitle")}</h2>
     </div>
   );
 }
@@ -94,19 +94,10 @@ function RestaurantLogo() {
 }
 
 function RestaurantDescription() {
+  const { t } = useTranslation();
   return (
-    <div className="w-full xl:w-4/5 my-3">
-      <p className="leading-9 text-justify font-light">
-        با وجود دنیایی از غذاهای ایرانی و غیرایرانی که در منوی رستوران‌ها
-        می‌بینید، انواع فست‌فودها، ساندویچ‌ها و غذاهای محلی و بین‌المللی که
-        آماده سفارش هستند؛ بعضی‌ها هم که از قدیم پرطرفدار بوده‌اند و هنوز هم
-        مشتریان همیشگی دارند. مثلا از میان منوهای سنتی، کباب‌ها و از میان
-        فست‌فودها، انواع برگر با استقبال بیشتری روبه‌رو می‌شوند. پیتزا مثل همیشه
-        در صدر فهرست پرطرفدارترین‌هاست و کودک و جوان عاشقش هستند. حتی این‌روزها
-        که سبک زندگی تغییر کرده و علاقه به سالم‌خوری بیشتر از قبل شده، خیلی از
-        مخاطبان اسنپ برای وعده‌های اصلی سراغ سالادهای مختلف می‌روند که جای تحسین
-        دارد.
-      </p>
+    <div className="w-full my-3 xl:w-4/5">
+      <p className="font-light leading-9 text-justify">{t("ResturantDesc")}</p>
     </div>
   );
 }

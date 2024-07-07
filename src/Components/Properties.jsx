@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function Properties() {
   return (
@@ -9,35 +10,39 @@ function Properties() {
     </section>
   );
 }
+
 function PropertiesArticle() {
-  const [state] = useState([
-    {
-      id: 1,
-      Img: "https://web-cdn.snapp.ir/snapp-website/images/food/4.png",
-      Alt: "food",
-      Title: "غذای ملل مختلف",
-      Description:
-        "دست‌تان برای انتخاب انواع غذاهای ایرانی، لبنانی، ایتالیایی، هندی، ترکی، چینی و ... باز است.",
-    },
-    {
-      id: 2,
-      Img: "https://web-cdn.snapp.ir/snapp-website/images/food/3.png",
-      Alt: "delivery",
-      Title: "تحویل سریع",
-      Description:
-        "بدون فوت وقت در ترافیک یا انتظار پشت تلفن، شام یا ناهار دلخواه را همراه با مخلفات، آنلاین سفارش دهید.",
-    },
-    {
-      id: 3,
-      Img: "https://web-cdn.snapp.ir/snapp-website/images/food/5.png",
-      Alt: "support",
-      Title: "پشتیبانی تمام وقت",
-      Description:
-        "تیم اسنپ هر روز هفته، به‌صورت شبانه‌روزی، پاسخ‌گوی سؤالات و مشکلات احتمالی است.",
-    },
-  ]);
+  const { t, i18n } = useTranslation();
+  const [state, setState] = useState([]);
+
+  useEffect(() => {
+    setState([
+      {
+        id: 1,
+        Img: "https://web-cdn.snapp.ir/snapp-website/images/food/4.png",
+        Alt: "food",
+        Title: t("PropertiesTitle1"),
+        Description: t("PropertiesDesc1"),
+      },
+      {
+        id: 2,
+        Img: "https://web-cdn.snapp.ir/snapp-website/images/food/3.png",
+        Alt: "delivery",
+        Title: t("PropertiesTitle2"),
+        Description: t("PropertiesDesc2"),
+      },
+      {
+        id: 3,
+        Img: "https://web-cdn.snapp.ir/snapp-website/images/food/5.png",
+        Alt: "support",
+        Title: t("PropertiesTitle3"),
+        Description: t("PropertiesDesc3"),
+      },
+    ]);
+  }, [i18n.language, t]);
+
   return (
-    <article className="w-full flex justify-center md:justify-around lg:justify-evenly items-center flex-wrap gap-y-10 lg:gap-y-0">
+    <article className="flex flex-wrap items-center justify-center w-full md:justify-around lg:justify-evenly gap-y-10 lg:gap-y-0">
       {state.map((val) => {
         return <PropertiesArticleChild key={val.id} {...val} />;
       })}

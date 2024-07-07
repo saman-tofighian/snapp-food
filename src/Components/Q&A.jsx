@@ -4,6 +4,8 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
+import { useTranslation } from "react-i18next";
+
 const CUSTOM_ANIMATION = {
   mount: { scale: 1 },
   unmount: { scale: 0.9 },
@@ -23,10 +25,11 @@ function AccordionCustomAnimation() {
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
+  const { t } = useTranslation();
   return (
     <>
       <div className="w-full my-[32px]">
-        <h2 className="font-bold text-[1.6rem]">پرسش های پرتکرار</h2>
+        <h2 className="font-bold text-[1.6rem]">{t("QuestionTitle")}</h2>
       </div>
       <Accordion
         open={open === 1}
@@ -35,15 +38,14 @@ function AccordionCustomAnimation() {
       >
         <AccordionHeader onClick={() => handleOpen(1)}>
           <h4 className="text-[14px] sm:text-[18px] py-[2px]">
-            تحویل غذا چقدر زمان می‌برد؟
+            {t("QuestionSubTitle1")}
           </h4>
         </AccordionHeader>
 
         <AccordionBody>
           <hr />
           <p className="text-[#737789] leading-[36px] font-medium py-[16px]">
-            زمان تحویل سفارش متغیر است اما اسنپ‌ سعی می کند در سریع‌ترین زمان
-            ممکن سفارش شما ‏را تحویل ‌دهد.‏
+            {t("QuestionDesc1")}
           </p>
         </AccordionBody>
       </Accordion>
@@ -54,15 +56,14 @@ function AccordionCustomAnimation() {
       >
         <AccordionHeader onClick={() => handleOpen(2)}>
           <h4 className="text-[14px] sm:text-[18px] py-[2px]">
-            از چه راه‌هایی می‌توان هزینه غذا را پرداخت کرد؟
+            {t("QuestionSubTitle2")}
           </h4>
         </AccordionHeader>
 
         <AccordionBody>
           <hr />
           <p className="text-[#737789] leading-[36px] font-medium py-[16px]">
-            کاربران می‌توانند از سه طریق مختلف از جمله حضوری، اعتباری و آنلاین
-            مبلغ سفارش خود را ‏پرداخت کنند.‏
+            {t("QuestionDesc2")}
           </p>
         </AccordionBody>
       </Accordion>
@@ -73,16 +74,14 @@ function AccordionCustomAnimation() {
       >
         <AccordionHeader onClick={() => handleOpen(3)}>
           <h4 className="text-[14px] sm:text-[18px] py-[2px]">
-            آیا می‌توان در یک ثبت سفارش از چند رستوران غذا تهیه کرد؟
+            {t("QuestionSubTitle3")}
           </h4>
         </AccordionHeader>
 
         <AccordionBody>
           <hr />
           <p className="text-[#737789] leading-[36px] font-medium py-[16px]">
-            در هر سفارش می‌توان تنها از یک رستوران ثبت ‏سفارش داشت. اما برای
-            سفارش از رستوران‌های بیشتر، پس از ثبت سفارش اول خود می‌توانید ‏سفارش
-            جدیدی از رستورانی دیگر داشته باشید.
+            {t("QuestionDesc3")}
           </p>
         </AccordionBody>
       </Accordion>
@@ -93,17 +92,14 @@ function AccordionCustomAnimation() {
       >
         <AccordionHeader onClick={() => handleOpen(4)}>
           <h4 className="text-[14px] sm:text-[18px] py-[2px]">
-            از کجا کد تخفیف دریافت کنم؟
+            {t("QuestionSubTitle4")}
           </h4>
         </AccordionHeader>
 
         <AccordionBody>
           <hr />
           <p className="text-[#737789] leading-[36px] font-medium py-[16px]">
-            تخفیف‌ها با توجه به کمپین‌های مختلف در اختیار مشتریان قرار می‌گیرند.
-            از طریق اسنپ کلاب هم ‏می‌توانید تخفیف‌های تفکیک شده برای خدماتی نظیر
-            سفارش غذا، کیک و شیرینی و نانوایی را ‏دریافت کنید. همچنین بسته‌های
-            خدماتی در راستای کاهش هزینه‌های سفارش‌های شما نیز ارایه شده است.
+            {t("QuestionDesc4")}
           </p>
         </AccordionBody>
       </Accordion>
@@ -114,15 +110,14 @@ function AccordionCustomAnimation() {
       >
         <AccordionHeader onClick={() => handleOpen(5)}>
           <h4 className="text-[14px] sm:text-[18px] py-[2px]">
-            چگونه برای سفارش غذا اقدام کنم؟
+            {t("QuestionSubTitle5")}
           </h4>
         </AccordionHeader>
 
         <AccordionBody>
           <hr />
           <p className="text-[#737789] leading-[36px] font-medium py-[16px]">
-            کافی است دکمه واقع در بالای صفحه را انتخاب کنید و از بهترین رستوران
-            های و فست های اطراف خود، درخواست سفارش غذا را ثبت کنید.
+            {t("QuestionDesc5")}
           </p>
         </AccordionBody>
       </Accordion>

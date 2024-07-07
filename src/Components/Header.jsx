@@ -135,7 +135,11 @@ function Language() {
 
   return (
     <div className="w-1/5 h-full  flex justify-center items-center">
-      <select value={locale} onChange={onChangeLocale}>
+      <select
+        value={locale}
+        onChange={onChangeLocale}
+        className="border px-3 py-2 shadow rounded-lg border-[#ff00a636] cursor-pointer"
+      >
         <option value="fa">Persian</option>
         <option value="en">English</option>
         <option value="ar">Arabic</option>

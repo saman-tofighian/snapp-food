@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 function Footer() {
   return (
     <>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
         <path
           fill="#f2f5f8"
           fillOpacity="1"
@@ -30,53 +31,33 @@ function Footer() {
 }
 
 function FooterNav() {
-  const [links] = useState([
-    {
-      Id: 1,
-      Name: "فرصت‌های شغلی",
-      To: "/",
-    },
-    {
-      Id: 2,
-      Name: "بلاگ",
-      To: "/",
-    },
-    {
-      Id: 3,
-      Name: "شرایط و قوانین",
-      To: "/",
-    },
-    {
-      Id: 4,
-      Name: "پنل سازمانی",
-      To: "/",
-    },
-    {
-      Id: 5,
-      Name: "سوالات متداول",
-      To: "/",
-    },
-    {
-      Id: 6,
-      Name: "باشگاه رانندگان",
-      To: "/",
-    },
-    {
-      Id: 7,
-      Name: "ثبت نام راننده اسنپ",
-      To: "/",
-    },
-    {
-      Id: 8,
-      Name: "درباره ما",
-      To: "/",
-    },
-    {
-      Id: 9,
-      Name: "تماس با ما",
-      To: "/",
-    },
+  const { t, i18n } = useTranslation();
+  const [links, setLinks] = useState([
+    { id: 1, Name: t("navtxt1"), To: "/" },
+    { id: 2, Name: t("navtxt2"), To: "/" },
+    { id: 3, Name: t("navtxt8"), To: "/" },
+    { id: 4, Name: t("navtxt5"), To: "/" },
+    { id: 5, Name: t("navtxt9"), To: "/" },
+    { id: 6, Name: t("navtxt3"), To: "/" },
+    { id: 7, Name: t("navtxt4"), To: "/" },
+    { id: 7, Name: t("navtxt6"), To: "/" },
+    { id: 7, Name: t("navtxt7"), To: "/" },
   ]);
+
+  useEffect(() => {
+    setLinks([
+      { id: 1, Name: t("navtxt1"), To: "/" },
+      { id: 2, Name: t("navtxt2"), To: "/" },
+      { id: 3, Name: t("navtxt8"), To: "/" },
+      { id: 4, Name: t("navtxt5"), To: "/" },
+      { id: 5, Name: t("navtxt9"), To: "/" },
+      { id: 6, Name: t("navtxt3"), To: "/" },
+      { id: 7, Name: t("navtxt4"), To: "/" },
+      { id: 7, Name: t("navtxt6"), To: "/" },
+      { id: 7, Name: t("navtxt7"), To: "/" },
+    ]);
+  }, [i18n.language, t]);
+
   return (
     <nav className="flex flex-wrap justify-center w-full pr-2">
       {links.map((val) => {
@@ -154,12 +135,13 @@ function FooterValidation() {
 }
 
 function FooterCopyWrite() {
+  const { t } = useTranslation();
   return (
     <div className="flex justify-center w-full mt-4">
       <h6>
-        توسعه یافته توسط{" "}
-        <strong className="text-[#ff00a6]"> سامان توفیقیان</strong> تمامی حقوق
-        محفوظ است
+        {t("copyRight1")}{" "}
+        <strong className="text-[#ff00a6]">{t("SamanTofighian")} </strong>
+        {t("copyRight2")}
       </h6>
     </div>
   );
