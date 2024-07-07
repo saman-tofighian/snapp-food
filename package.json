@@ -1,54 +1,28 @@
 {
-  "name": "snapp-food",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --port 2080",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@gsap/react": "^2.1.1",
-    "@material-tailwind/react": "^2.1.4",
-    "aos": "^3.0.0-beta.6",
-    "i18next": "^23.11.5",
-    "lodash-es": "github:lodash/lodash#es",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^14.1.2",
-    "react-icons": "^5.0.1",
-    "react-scripts": "^5.0.1"
-  },
   "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.17",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "postcss": "^8.4.35",
-    "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "tailwindcss": "^3.4.1",
-    "vite": "^5.0.8"
+    "vite": "^5.3.3"
   },
+  "name": "snapp-food",
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "version": "1.0.0",
   "main": "postcss.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saman-tofighian/snapp-food.git"
+  "dependencies": {
+    "acorn": "^8.11.3",
+    "buffer-from": "^1.1.2",
+    "commander": "^2.20.3",
+    "esbuild": "^0.21.5",
+    "nanoid": "^3.3.7",
+    "picocolors": "^1.0.1",
+    "postcss": "^8.4.39",
+    "source-map": "^0.6.1",
+    "source-map-js": "^1.2.0",
+    "source-map-support": "^0.5.21",
+    "terser": "^5.27.0",
+    "undici-types": "^5.26.5"
   },
-  "keywords": [
-    "react",
-    "react-snapp-food"
-  ],
-  "author": "saman tofighian",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/saman-tofighian/snapp-food/issues"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/saman-tofighian/snapp-food#readme"
+  "author": "",
+  "license": "ISC"
 }
