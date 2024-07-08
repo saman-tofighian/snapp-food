@@ -1,13 +1,15 @@
 {
+  "type": "commonjs",
   "name": "snapp-food",
   "version": "1.0.0",
+  "private": true,
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "postcss.config.js",
   "scripts": {
-    "dev": "vite --port 2080",
+    "dev": "vite",
     "build": "vite build",
     "start": "vite preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "serve": "vite preview",
     "preview": "vite preview"
   },
   "dependencies": {
